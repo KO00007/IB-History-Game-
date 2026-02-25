@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="gameContainer">
+    <canvas id="gameCanvas" width="1280" height="720"></canvas>
+    <div id="ui-layer">
+      <div id="hud">
+        <div id="scoreDisplay">SCORE: 0</div>
+        <div id="livesDisplay">LIVES: 3</div>
+      </div>
+      <div id="triviaModal" class="hidden modal">
+        <h2 id="questionText">Question?</h2>
+        <div id="timerDisplay">10</div>
+        <div id="choices"></div>
+      </div>
+      <div id="gameOverModal" class="hidden modal">
+        <h1 id="gameOverReason">GAME OVER</h1>
+        <button id="restartBtn">RESTART</button>
+      </div>
+    </div>
+  </div>
+  <script src="GameObject.js"></script>
+  <script src="Bullet.js"></script>
+  <script src="Asteroid.js"></script>
+  <script src="Player.js"></script>
+  <script src="Game.js"></script>
+  <script>
+    const game = new Game(document.getElementById('gameCanvas'));
+    window.game = game;
+    game.start();
+  </script>
+</body>
+</html>
